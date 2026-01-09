@@ -4,6 +4,61 @@ A complete deep learning–based medical imaging system for automatic brain tumo
 The project integrates VGG16-based classification and U-Net-based segmentation with a Streamlit web application for real-time clinical-style analysis and reporting.
 
 
+## 📊 **Dataset Overview**
+
+This dataset is a medical imaging dataset of brain MRI scans designed to support both tumor segmentation and tumor classification tasks — making it ideal for projects in computer vision, deep learning, and medical image analysis. 
+
+### 🧠 **What the Dataset Contains**
+
+The dataset is organized into two main tasks:
+
+#### 1. **Classification Task (Image-Level Labels)**
+
+* MRI scans are categorized into four clinical classes:
+
+  * **Glioma** (a type of malignant tumor),
+  * **Meningioma** (typically benign),
+  * **Pituitary tumor**, and
+  * **No tumor** (healthy control cases).
+* Images are split into Training and Testing folders.
+* Within each split, subfolders correspond to each class — facilitating easy data loading for classification models.
+
+#### 2. **Segmentation Task (Pixel-Wise Labels)**
+
+* A subset of scans includes segmentation masks that identify the exact tumor regions at the pixel level.
+* Images and masks are paired, enabling training and evaluation of semantic segmentation models. ([Figshare][3])
+
+### 📂 Dataset Structure
+
+```
+DATASET/
+│
+├── Segmentation/
+│   ├── Glioma/
+│   ├── Meningioma/
+│   └── Pituitary tumor/
+│
+└── classification/
+    ├── Training/
+    │   ├── glioma/
+    │   ├── meningioma/
+    │   ├── pituitary/
+    │   └── notumor/
+    │
+    └── Testing/
+        ├── glioma/
+        ├── meningioma/
+        ├── pituitary/
+        └── notumor/
+```
+
+### 📌 **Key Benefits & Use Cases**
+
+* **Multi-class Classification** — classifying MRI scans into four tumor categories or healthy controls.
+* **Segmentation** — training models to localize tumor regions at pixel level for semantic understanding. 
+* **Medical Research & ML Benchmarks** — supports developing, validating, and comparing deep learning models in a medical imaging context.
+
+
 ## 📌 Key Features
 
 * 🧠 **Automatic Tumor Detection** with clear MRI scan interpretation
@@ -43,31 +98,6 @@ The project integrates VGG16-based classification and U-Net-based segmentation w
 * **Design:** Encoder–Decoder with skip connections
 * **Loss Functions:** Dice Loss, Binary Cross-Entropy
 * **Output:** Pixel-wise tumor segmentation mask
-
-
-## 📂 Dataset Structure
-
-```
-DATASET/
-│
-├── Segmentation/
-│   ├── Glioma/
-│   ├── Meningioma/
-│   └── Pituitary tumor/
-│
-└── classification/
-    ├── Training/
-    │   ├── glioma/
-    │   ├── meningioma/
-    │   ├── pituitary/
-    │   └── notumor/
-    │
-    └── Testing/
-        ├── glioma/
-        ├── meningioma/
-        ├── pituitary/
-        └── notumor/
-```
 
 
 ## 🖥️ Streamlit Web Application
